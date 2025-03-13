@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+
+.active-tab{
+    @apply text-[#5A0000]
+}
+
+.active-language{
+    @apply bg-gold rounded-full  text-black-base 
+}
+
+
+
+
+
+
+@theme {
+    --font-roboto: "Roboto", serif;
+    --font-montserrat :  "Montserrat", serif;
+    --color-primary : #5A0000;
+    --color-black-base: #191919;
+    --color-gold: #BD9151;
+  }
