@@ -16,10 +16,20 @@
 
 
 
+
+
 @theme {
     --font-roboto: "Roboto", serif;
     --font-montserrat :  "Montserrat", serif;
     --color-primary : #5A0000;
     --color-black-base: #191919;
     --color-gold: #BD9151;
+  }
+
+  
+
+  @layer utilities {
+    [x-cloak] {
+      display: none !important;
+    }
   }
