@@ -10,6 +10,32 @@
 .active-language{
     @apply bg-gold rounded-full  text-black-base 
 }
+.owl-carousel-beranda .owl-dots button.owl-dot span{
+  @apply transition-all duration-300 bg-[#D7D7D7]
+}
+
+.owl-carousel-beranda .owl-dots button.owl-dot.active span{
+  @apply bg-[#FEFEFE] w-[26.5px]
+}
+
+.owl-carousel-kabar-terbaru .owl-dots button.owl-dot span{
+  @apply transition-all duration-300 bg-[#888888]
+}
+
+.owl-carousel-kabar-terbaru .owl-dots button.owl-dot.active span{
+  @apply bg-gold
+}
+
+.owl-carousel-kabar-terbaru .owl-item.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.owl-carousel-kabar-terbaru .owl-item.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
 
 
 
