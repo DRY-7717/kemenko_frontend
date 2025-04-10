@@ -84,7 +84,8 @@
                                         <a href="profile.html"
                                             class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Profil</a>
                                         <a href="struktur_organisasi.html"
-                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Struktur Organisasi</a>
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Struktur
+                                            Organisasi</a>
                                     </div>
                                 </div>
                                 <!-- dekstop -->
@@ -161,140 +162,110 @@
         </nav>
     </header>
 
-
-
-
-    <section class="hero w-full pt-32 pb-10 xl:pt-48 xl:pb-[88px]">
+    <section class="hero-jdih w-full pt-36 pb-6 md:pt-40 mb:pb-0 xl:pt-48 xl:pb-[24px]" x-data="{ 
+        isSelect: '',
+        isOpenDropdownSelect: false,
+        isFilter: false,
+        selectedTextTahun : 'Tahun',
+        selectedTextPeraturan : 'Jenis Peraturan',
+        tahunList: ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018'],
+        peraturanList: ['UUD 1945', 'Undang-Undang', 'Peraturan Pemerintah Pengganti Undang-Undang', 'Peraturan Pemerintah', 'Peraturan Presiden', 'Keputusan Presiden ', 'Intruksi Presiden ', 'Intruksi Menteri Koordinator', 'Keputusan Sesmenko','Surat Edaran Sesmenko','Peraturan Terkait'],
+        toggleDropdownSelect(select, textTahun = 'Tahun', textPeraturan = ''){
+            this.isSelect = select
+            this.isOpenDropdownSelect = !this.isOpenDropdownSelect
+        },
+        selectTahun(tahun) {
+            this.selectedTextTahun = tahun;
+            this.isOpenDropdownSelect = !this.isOpenDropdownSelect;
+        },
+        selectPeraturan(peraturan) {
+            this.selectedTextPeraturan = peraturan;
+            this.isOpenDropdownSelect = !this.isOpenDropdownSelect;
+        },
+        toggleFilter(){
+            this.isFilter = !this.isFilter
+        }
+    }">
         <div class="container w-full mx-auto px-7">
-            <div class=" flex flex-wrap md:justify-between gap-y-8 md:gap-y-0 xl:w-[1150px] xl:mx-auto ">
-                <div class="desc-hero order-2 md:order-1 md:w-[400px] lg:w-[540px] xl:w-[710px]">
-                    <h1 class="font-montserrat text-black-base font-bold text-xl md:text-3xl lg:text-5xl xl:text-6xl mb-4 lg:mb-6 xl:mb-8">Whistle Blowing System Kemenko PM</h1>
-                    <p class="font-roboto text-sm lg:text-xl xl:text-2xl xl:leading-12 text-black-base mb-4 lg:mb-7 xl:mb-8">Lorem ipsum dolor sit amet consectetur. Ultrices consequat arcu suspendisse turpis enim ipsum condimentum. Leo neque pulvinar aliquam dui. Libero etiam arcu ac potenti in ornare. Cursus massa consectetur aliquet cursus nec laoreet molestie sit nullam.</p>
-                    <a href="#" class="btn-aduan font-montserrat font-bold bg-primary text-white w-28 lg:w-44 xl:w-[180px] xl:h-[72px] px-4 py-2.5 lg:py-4 text-xs lg:text-base rounded-full text-center flex justify-center items-center">Buat Aduan</a>
+            <div class=" xl:w-[1150px] xl:mx-auto">
+                <a href=""
+                    class=" md:text-start text-black-base text-base md:text-lg lg:text-xl xl:text-2xl font-bold font-montserrat mb-7 md:mb-11 xl:mb-12 flex justify-start items-center gap-1 xl:gap-2">
+                    <div class="icon-arrow w-4 h-4 md:w-5 md:h-5">
+                        <img src="./src/img/arrow-left.svg" class="w-full h-full" alt="">
+                    </div>
+                    <span class="">Kembali</span>
+                </a>
+                <h1
+                    class="text-start text-black-secondary leading-9 md:leading-14 text-2xl md:text-4xl xl:text-[32px] font-bold font-montserrat mb-10 md:mb-9 lg:mb-12">
+                    Jaringan Dokumentasi dan Informasi Hukum Kementerian Pemberdayaan Masyarakat</h1>
+
+                <form class="search-box w-full relative" >
+                    <div class="grid grid-cols-8 xl:grid-cols-12 gap-2 mb-5 xl:mb-12">
+                        <div
+                            class="box-input-search col-span-7 xl:col-span-11 flex items-center justify-between font-roboto border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4">
+                            <input type="text"
+                                class="text-sm font-bold md:text-lg lg:text-xl xl:text-2xl w-full border-none outline-0 placeholder:text-[#888888] placeholder:text-sm placeholder:font-bold md:placeholder:text-lg lg:placeholder:text-xl xl:placeholder:text-2xl"
+                                placeholder="Masukan Kata Kunci">
+                            <div class="box-icon-search w-8 px-1.5 md:px-0 md:w-5 md:h-5">
+                                <img src="./src/img/icon-search-jdih.svg" class="w-full" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-filter col-span-1 place-self-center" @click="toggleFilter">
+                            <img src="./src/img/filter-jdih.svg" alt="" class="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div x-show="isFilter" class="xl:w-full px-7 xl:px-3 mx-auto mb-14 ">
+            <div class=" grid filter-input-box  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-3 md:gap-4" >
+                <input type="text" inputmode="numeric"
+                    class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full outline-0 placeholder:font-bold placeholder:text-[#888888] placeholder:text-sm md:placeholder:text-lg lg:placeholder:text-xl xl:placeholder:text-2xl"
+                    placeholder="Nomor">
+
+                <div class="select-tahun relative">
+                    <div @click="toggleDropdownSelect('tahun')"
+                        class="font-roboto border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full font-bold ">
+                        <div class="w-full flex justify-between items-center">
+                            <p class="tahun cursor-pointer" :class="[selectedTextTahun != 'Tahun' ? 'text-black' : 'text-[#888888]']  " x-text="selectedTextTahun"></p>
+                            <img src="./src/img/arrow-down-jdih.svg" alt="">
+                        </div>
+                    </div>
+
+                    <ul :class="[isOpenDropdownSelect && isSelect == 'tahun' ? 'visible opacity-100' : 'opacity-0 invisible']"
+                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-blue-300 rounded-2xl font-montserrat font-bold text-sm md:text-base p-4 transition-all duration-200 z-50">
+                        <template x-for="tahun in tahunList" :key="tahun">
+                            <li class="mb-4 cursor-pointer " @click="selectTahun(tahun)">
+                                <span x-text="tahun"></span>
+                            </li>
+                        </template>
+                    </ul>
                 </div>
-                <div class="img-hero w-[280px] lg:w-[380px] xl:w-[400px]  mx-auto md:mx-0 order-1 md:order-2">
-                    <img src="./src/img/illustration-hero-wbs.svg" class="w-full" alt="">
+                <div class="select-peraturan relative md:col-span-2 lg:col-span-1">
+                    <div @click="toggleDropdownSelect('peraturan')"
+                        class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full text-[#888888]">
+                        <div class="w-full flex justify-between items-center">
+                            <p class="peraturan cursor-pointer" :class="[selectedTextPeraturan != 'Jenis Peraturan' ? 'text-black' : 'text-[#888888]']"  x-text="selectedTextPeraturan"></p>
+                            <img src="./src/img/arrow-down-jdih.svg" alt="">
+                        </div>
+                    </div>
+
+                    <ul :class="[isOpenDropdownSelect && isSelect == 'peraturan' ? 'visible opacity-100' : 'opacity-0 invisible']"
+                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-blue-300 rounded-2xl font-montserrat font-bold text-sm md:text-base p-4 transition-all duration-200 z-50">
+                        <template x-for="peraturan in peraturanList" :key="peraturan">
+                            <li class="mb-5 cursor-pointer" @click="selectPeraturan(peraturan)">
+                                <span x-text="peraturan"></span>
+                            </li>
+                        </template>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="layanan w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
-        <div class="container w-full mx-auto px-7">
-            <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Layanan</h1>
-               <div class="grid grid-cols-1 md:grid-cols-2 px-4 gap-4 md:gap-0 md:px-0 md:w-[580px] lg:w-[720px] xl:w-[850px] md:mx-auto">
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-br-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
-                            <img src="./src/img/layanan-1.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Mudah digunakan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Layanan WBS sangat mudah digunakan, cukup login ke dalam aplikasi dan masukkan kejadian yang mengindikasikan kecurangan di lingkungan Kementerian Komunikasi dan Digital.</p>
-                    </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-bl-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
-                            <img src="./src/img/layanan-2.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Kerahasiaan informasi pribadi</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda akan dijamin kerahasiaannya oleh kami. Anda boleh menggunakan nama samaran atau anonim dalam melakukan laporan agar data pribadi Anda tetap rahasia.</p>
-                    </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tr-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
-                            <img src="./src/img/layanan-3.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Keamanan informasi aduan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Kami menggunakan prosedur penanganan yang dapat menjamin perlindungan terhadap informasi aduan Anda, sehingga setiap laporan akan diproses secara rahasia.</p>
-                    </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tl-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
-                            <img src="./src/img/layanan-4.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Membantu Pemerintah</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Dengan menggunakan layanan ini, maka Anda ikut membantu pemerintah dalam meminimalisir penyelewangan tugas dan wewenang yang terjadi di lingkungan Kementerian Komunikasi dan Digital.</p>
-                    </div>
-               </div>
-            </div>
-        </div>
-    </section>
-    <section class="kriteria w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
-        <div class="container w-full mx-auto px-7">
-            <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Kriteria Laporan</h1>
-                <ul class="ps-6 md:ps-7 lg:ps-10 xl:ps-16">
-                    <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
-                        <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
-                            <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
-                        </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">What,</span> perbuatan berindikasi pelanggaran yang diketahui.</p>
-                    </li>
-                    <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
-                        <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
-                            <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
-                        </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Who,</span> siapa saja yang terlibat dalam perbuatan tersebut.</p>
-                    </li>
-                    <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
-                        <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
-                            <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
-                        </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Where,</span> di mana perbuatan tersebut dilakukan.</p>
-                    </li>
-                    <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
-                        <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
-                            <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
-                        </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">When,</span> kapan perbuatan tersebut dilakukan.</p>
-                    </li>
-                    <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
-                        <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
-                            <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
-                        </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">How,</span> bagaimana perbuatan tersebut dilakukan.</p>
-                    </li>
-                </ul>
 
-              
-            </div>
-        </div>
     </section>
-    <section class="laporan w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
-        <div class="container w-full mx-auto px-7">
-            <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Cara Membuat Laporan</h1>
-               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-5 xl:gap-6  px-4 xl:px-10">
-                    <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
-                            <img src="./src/img/laporan-1.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Buat Akun</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Pertama silahkan daftarkan diri Anda ke layanan WBS, Anda boleh menggunakan identitas samaran.</p>
-                    </div>
-                    <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
-                            <img src="./src/img/laporan-2.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Login Layanan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Setelah melakukan pendaftaran, langkah selanjutnya silahkan melakukan login ke dalam layanan.</p>
-                    </div>
-                    <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
-                            <img src="./src/img/laporan-3.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Buat Laporan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Anda tinggal mengisi formulir yang telah disediakan beserta bukti laporan selanjutnya klik kirim.</p>
-                    </div>
-                    <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
-                            <img src="./src/img/laporan-4.svg" class="w-full" alt="">
-                        </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Respon</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda kemudian kami tindaklanjuti tanpa mengabaikan kerahasiaan dan identitas Anda.</p>
-                    </div>
-                   
-               </div>
-            </div>
-        </div>
-    </section>
-   
+
 
 
     <footer class="pt-[88px] ">
@@ -371,7 +342,8 @@
         <div
             class="footer-bottom py-5 xl:py-6 px-6 xl:px-0 bg-primary font-montserrat text-sm lg:text-base xl:text-[18px]  ">
             <div class="container  xl:px-20 md:max-w-full xl:max-w-[1480px] xl:mx-auto">
-                <p class="text-white font-semibold">© Kementerian Koordinator Bidang Pemberdayaan Masyarakat, 2025. Copyright</p>
+                <p class="text-white font-semibold">© Kementerian Koordinator Bidang Pemberdayaan Masyarakat, 2025.
+                    Copyright</p>
             </div>
         </div>
     </footer>
