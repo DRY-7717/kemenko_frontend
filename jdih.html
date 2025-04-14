@@ -196,11 +196,11 @@
                     <span class="">Kembali</span>
                 </a>
                 <h1
-                    class="text-start text-black-secondary leading-9 md:leading-14 text-2xl md:text-4xl xl:text-[32px] font-bold font-montserrat mb-10 md:mb-9 lg:mb-12">
+                    class="text-start text-black-secondary leading-9 md:leading-14 text-2xl md:text-4xl xl:text-2xl font-bold font-montserrat mb-10 md:mb-9 lg:mb-12">
                     Jaringan Dokumentasi dan Informasi Hukum Kementerian Pemberdayaan Masyarakat</h1>
 
-                <form class="search-box w-full relative" >
-                    <div class="grid grid-cols-8 xl:grid-cols-12 gap-2 mb-5 xl:mb-12">
+                <form class="search-box w-full ">
+                    <div class="grid grid-cols-8 xl:grid-cols-12 gap-2 mb-5 xl:mb-14 xl:w-[930px] xl:mx-auto">
                         <div
                             class="box-input-search col-span-7 xl:col-span-11 flex items-center justify-between font-roboto border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4">
                             <input type="text"
@@ -211,31 +211,36 @@
                             </div>
                         </div>
 
-                        <div class="box-filter col-span-1 place-self-center" @click="toggleFilter">
+                        <div class="box-filter col-span-1 place-self-center" @click="toggleFilter()">
                             <img src="./src/img/filter-jdih.svg" alt="" class="">
                         </div>
                     </div>
+
                 </form>
             </div>
 
         </div>
-        <div x-show="isFilter" class="xl:w-full px-7 xl:px-3 mx-auto mb-14 ">
-            <div class=" grid filter-input-box  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-3 md:gap-4" >
+        <div x-cloak x-show="isFilter" class="xl:w-full container px-7 xl:px-3 mx-auto mb-5 xl:mb-14 ">
+            <div
+                class="grid filter-input-box  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-3 md:gap-4 xl:w-[1050px] xl:mx-auto">
                 <input type="text" inputmode="numeric"
-                    class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full outline-0 placeholder:font-bold placeholder:text-[#888888] placeholder:text-sm md:placeholder:text-lg lg:placeholder:text-xl xl:placeholder:text-2xl"
+                    class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-6 md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full outline-0 placeholder:font-bold placeholder:text-[#888888] placeholder:text-sm md:placeholder:text-lg lg:placeholder:text-xl xl:placeholder:text-2xl"
                     placeholder="Nomor">
 
                 <div class="select-tahun relative">
                     <div @click="toggleDropdownSelect('tahun')"
-                        class="font-roboto border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full font-bold ">
+                        class="font-roboto border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-6 md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full font-bold ">
                         <div class="w-full flex justify-between items-center">
-                            <p class="tahun cursor-pointer" :class="[selectedTextTahun != 'Tahun' ? 'text-black' : 'text-[#888888]']  " x-text="selectedTextTahun"></p>
+                            <p class="tahun cursor-pointer"
+                                :class="[selectedTextTahun != 'Tahun' ? 'text-black' : 'text-[#888888]']  "
+                                x-text="selectedTextTahun"></p>
                             <img src="./src/img/arrow-down-jdih.svg" alt="">
                         </div>
                     </div>
 
-                    <ul :class="[isOpenDropdownSelect && isSelect == 'tahun' ? 'visible opacity-100' : 'opacity-0 invisible']"
-                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-blue-300 rounded-2xl font-montserrat font-bold text-sm md:text-base p-4 transition-all duration-200 z-50">
+                    <ul x-cloak
+                        :class="[isOpenDropdownSelect && isSelect == 'tahun' ? 'visible opacity-100' : 'opacity-0 invisible']"
+                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-white rounded-2xl font-montserrat font-bold text-sm xl:text-base p-4 transition-all duration-200 z-50">
                         <template x-for="tahun in tahunList" :key="tahun">
                             <li class="mb-4 cursor-pointer " @click="selectTahun(tahun)">
                                 <span x-text="tahun"></span>
@@ -245,15 +250,18 @@
                 </div>
                 <div class="select-peraturan relative md:col-span-2 lg:col-span-1">
                     <div @click="toggleDropdownSelect('peraturan')"
-                        class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-14 xl:px-[88px] md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full text-[#888888]">
+                        class="font-roboto font-bold border-[3px] border-[#3D3D3D] rounded-full overflow-hidden py-2 px-3 md:px-6 md:py-4 text-sm md:text-lg lg:text-xl xl:text-2xl w-full text-[#888888]">
                         <div class="w-full flex justify-between items-center">
-                            <p class="peraturan cursor-pointer" :class="[selectedTextPeraturan != 'Jenis Peraturan' ? 'text-black' : 'text-[#888888]']"  x-text="selectedTextPeraturan"></p>
+                            <p class="peraturan cursor-pointer truncate"
+                                :class="[selectedTextPeraturan != 'Jenis Peraturan' ? 'text-black' : 'text-[#888888]']"
+                                x-text="selectedTextPeraturan"></p>
                             <img src="./src/img/arrow-down-jdih.svg" alt="">
                         </div>
                     </div>
 
-                    <ul :class="[isOpenDropdownSelect && isSelect == 'peraturan' ? 'visible opacity-100' : 'opacity-0 invisible']"
-                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-blue-300 rounded-2xl font-montserrat font-bold text-sm md:text-base p-4 transition-all duration-200 z-50">
+                    <ul x-cloak
+                        :class="[isOpenDropdownSelect && isSelect == 'peraturan' ? 'visible opacity-100' : 'opacity-0 invisible']"
+                        class="absolute top-12 md:top-[73px] left-0 option-select w-full  bg-white rounded-2xl font-montserrat font-bold text-sm xl:text-base p-4 transition-all duration-200 z-50">
                         <template x-for="peraturan in peraturanList" :key="peraturan">
                             <li class="mb-5 cursor-pointer" @click="selectPeraturan(peraturan)">
                                 <span x-text="peraturan"></span>
@@ -264,6 +272,294 @@
             </div>
         </div>
 
+    </section>
+    <section class="dokumen w-full py-3 lg:py-16 xl:pt-5 xl:pb-[88px]" x-data="{ 
+        isSelect: '',
+        isOpenDropdownSelect: false,
+        isFilterDokumen: false,
+        selectedTextTemaDokumenHukum : 'Tema Dokumen Hukum',
+        temaList: ['Pengentasan Kemiskinan', 'Membangun dari Desa', 'Menguatkan UMKM dan Koperasi', 'Akselerasi Ekonomi Kreatif', 'Perlindungan Pekerja Migran', 'Dokumen Hukum Lainnya'],
+        toggleDropdownSelect(select, textTahun = 'Tahun', textPeraturan = ''){
+            this.isSelect = select
+            this.isOpenDropdownSelect = !this.isOpenDropdownSelect
+            if (this.isFilterDokumen == true) {
+                this.isFilterDokumen = false;
+            }
+        },
+        selectTema(tema) {
+            this.selectedTextTemaDokumenHukum = tema;
+            this.isOpenDropdownSelect = !this.isOpenDropdownSelect;
+            
+        },
+
+        toggleFilterDokumen(){
+            this.isFilterDokumen = !this.isFilterDokumen
+            if (this.isOpenDropdownSelect == true) {
+                this.isOpenDropdownSelect = false;
+            }
+        }
+    }">
+        <div class="container w-full mx-auto px-7">
+            <div class="xl:w-[1150px] xl:mx-auto ">
+                <div class="filter-dokumen w-full flex items-center gap-4 mb-8">
+                    <div class="select-tema relative w-[200px] md:w-[320px] xl:w-[362px] xl:h-[60px]">
+                        <div @click="toggleDropdownSelect('dokumen')"
+                            class="font-montserrat border-[1.5px] border-[#3D3D3D] rounded-xl overflow-hidden py-2 px-3 md:px-6 md:py-4 text-xs md:text-lg lg:text-xl xl:text-lg w-full font-semibold ">
+                            <div class="w-full flex justify-between items-center">
+                                <p class="tema cursor-pointer truncate text-[#3D3D3D] "
+                                    x-text="selectedTextTemaDokumenHukum"></p>
+                                <img src="./src/img/arrow-down-jdih.svg" class="xl:w-5 xl:h-5" alt="">
+                            </div>
+                        </div>
+
+                        <ul x-cloak
+                            :class="[isOpenDropdownSelect && isSelect == 'dokumen' ? 'visible opacity-100' : 'opacity-0 invisible']"
+                            class="absolute h-[260px] xl:h-[362px] overflow-scroll scrollbar-none top-12 md:top-[73px] left-0 option-select w-full  bg-white border border-[#3D3D3D] rounded-2xl font-montserrat text-[#3D3D3D] font-semibold text-sm md:text-lg transition-all duration-200 z-50">
+                            <template x-for="tema in temaList" :key="tema">
+                                <li class="p-4 cursor-pointer border-b border-b-[#D7D7D7] " @click="selectTema(tema)">
+                                    <span x-text="tema"></span>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <div class="box-filter w-7 md:w-9 xl:w-8 relative">
+                        <img src="./src/img/filter-jdih.svg" @click="toggleFilterDokumen()" alt="" class="w-full">
+
+                        <ul x-cloak :class="[isFilterDokumen? 'visible opacity-100' : 'opacity-0 invisible'] "
+                            class="absolute p-4 w-[112px] md:w-[130px] bg-white overflow-scroll scrollbar-none top-12 md:top-[73px] -left-24  option-select  rounded-2xl font-montserrat font-bold text-sm md:text-base transition-all duration-200 z-50">
+                            <li class="cursor-pointer mb-4" @click="isFilterDokumen = !isFilterDokumen">
+                                A-Z
+                            </li>
+                            <li class="cursor-pointer mb-4" @click="isFilterDokumen = !isFilterDokumen">
+                                Terbaru
+                            </li>
+                            <li class="cursor-pointer" @click="isFilterDokumen = !isFilterDokumen">
+                                Terpopuler
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="documents w-full mb-3 md:mb-4 h-[1476px] overflow-y-scroll scrollbar-none  ">
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                    <div class="document-box p-4 md:p-4 xl:px-10 xl:py-8  border-[3px] md:border-[4px] border-primary rounded-[31px] md:flex xl:items-center md:gap-3 xl:gap-[83px] mb-3 md:mb-4 lg:mb-6 xl:mb-9 transition-all duration-300 hover:shadow-[0px_16px_32px_0px_#EB9999] hover:py-10 ">
+                        <div class="box-img-layanan w-24 md:w-36 lg:w-40 xl:w-[200px] md:self-center  mb-2 xl:mb-6">
+                            <img src="./src/img/dokumen.webp" class="w-full" alt="">
+                        </div>
+                        <div class="desc-dokumen font-montserrat">
+                            <h3 class="font-semibold text-primary text-base  lg:text-lg   mb-2">Jenis Surat</h3>
+                            <h3 class="font-semibold text-primary text-base lg:text-lg   mb-2">Nomor Surat</h3>
+                            <h4 class="font-bold text-sm text-black-base mb-2 lg:mb-3 lg:text-base">Lorem ipsum dolor
+                                sit amet consectetur. Duis egestas gravida tellus euismod quisque.</h4>
+                            <div class="w-full mb-4 xl:mb-6 md:flex md:gap-2 xl:gap-8 items-center">
+                                <button
+                                    class="border-[1.5px] font-roboto border-gold text-gold font-semibold px-3 md:px-4 py-2 md:py-2.5 lg:py-3 text-[10px] md:text-xs rounded-full mb-3 md:mb-0">Tema
+                                    Surat</button>
+                                <div class="flex gap-2 xl:gap-8 items-center">
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px]  md:w-6 md:h-6">
+                                            <img src="./src/img/calendar-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                    <div class="views-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img w-[18px] h-[18px] md:w-6 md:h-6 xl:w-5 xl:h-5">
+                                            <img src="./src/img/eye-dokumen-icon.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-[#4F4F4F] font-montserrat text-xs md:text-sm">256</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href=""
+                                class="block w-[120px] xl:w-[133px] xl:h-[56px]  px-3 py-3 xl:py-4 xl:px-6 xl:flex xl:justify-center xl:items-center bg-primary rounded-full text-white text-xs xl:text-sm font-bold font-montserrat text-center ">Lihat
+                                Detail</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
 

@@ -52,6 +52,7 @@
     --color-black-secondary: #393934;
     --color-gold: #BD9151;
   }
+@plugin 'tailwind-scrollbar';
 
   
 
