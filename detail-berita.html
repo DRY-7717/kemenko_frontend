@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Kemenko PM</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="./src/dist/owlcarousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./src/dist/owlcarousel/assets/owl.theme.default.min.css" />
+</head>
+
+
+<body class="">
+    <header class="">
+        <nav x-data="{ 
+        isOpen: false,
+        isOpenDropdown: false,
+        isMenu: '',
+        lang: 'ID',
+        toggleMenu(){
+            this.isOpen = !this.isOpen
+            document.body.classList.toggle('overflow-hidden', this.isOpen); 
+            const navbar = document.querySelector('.navbar')
+            navbar.classList.toggle('rounded-bl-4xl', !this.isOpen)
+            navbar.classList.toggle('rounded-br-4xl', !this.isOpen)
+        },
+        toggleDropdown(menu){
+            this.isMenu = menu
+            this.isOpenDropdown = !this.isOpenDropdown
+
+            
+        }
+    }" class="navbar fixed w-full z-[9999]  bg-white shadow-[0px_16px_24px_0px_rgba(0,0,0,0.25)]  rounded-bl-4xl rounded-br-4xl transition-all duration-200 font-montserrat">
+            <div class="container py-4 px-6 md:max-w-full xl:max-w-[1480px] xl:mx-auto ">
+                <div class="xl:flex lg:items-center lg:justify-between">
+                    <div class="flex items-center justify-between">
+                        <a href="index.html" class="flex items-center gap-2 md:gap-4">
+                            <div class="logo h-[55px] xl:h-[67px]">
+                                <img class="w-auto h-full object-center object-cover " src="./src/img/logokemenko.webp"
+                                    alt="" fetchpriority="high" loading="eager">
+                            </div>
+                            <div
+                                class="title-logo leading-4 md:leading-5  xl:leading-6 text-[12px] md:text-sm xl:text-sm font-bold">
+                                Kementerian Koordinator
+                                <br>
+                                Bidang Pemberdayaan Masyarakat
+                            </div>
+                        </a>
+
+                        <!-- Mobile menu button -->
+                        <div class="flex xl:hidden">
+                            <button x-cloak @click="toggleMenu()" type="button"
+                                class="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 "
+                                aria-label="toggle menu">
+                                <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                                </svg>
+
+                                <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                    <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+                        class="absolute inset-y-[75px] inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 xl:p-0 xl:top-0 xl:relative xl:bg-transparent xl:w-auto xl:opacity-100 xl:translate-x-0 xl:flex xl:items-center h-dvh xl:h-auto">
+                        <div
+                            class=" font-bold text-sm xl:text-xm flex flex-col -mx-6 xl:flex-row xl:items-center xl:mx-0">
+                            <a href="index.html" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Beranda</a>
+                            <div @click="toggleDropdown('aboutus')"
+                                class="xl:relative group px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100  active-tab cursor-pointer">
+                                Tentang
+                                Kami
+
+                                <!-- mobile -->
+                                <div :class="[isOpenDropdown && isMenu == 'aboutus' ? 'h-[80px]' : 'h-0']"
+                                    class="submenu-mobile submenu-tentang-kami w-full h-0  bg-white overflow-hidden  transition-all duration-300 xl:hidden">
+                                    <div class="box-dropdown pt-1">
+                                        <a href="profile.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Profil</a>
+                                        <a href="struktur_organisasi.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Struktur
+                                            Organisasi</a>
+                                    </div>
+                                </div>
+                                <!-- dekstop -->
+                                <div
+                                    class="absolute top-11 rounded-2xl p-4 bg-white submenu submenu-tentang-kami w-[210px] overflow-hidden   transition-all duration-300 hidden xl:block invisible opacity-0 group-hover:visible group-hover:opacity-100">
+                                    <div class="box-dropdown pt-1">
+                                        <a href="profile.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Profil</a>
+                                        <a href="struktur_organisasi.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Struktur
+                                            Organisasi</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Media
+                                Center</a>
+                            <a href="#" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">PPID</a>
+                            <a href="jdih.html" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">JDIH</a>
+                            <div @click="toggleDropdown('pelaporan')"
+                                class="xl:relative group px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100  cursor-pointer">
+                                Pelaporan
+                                <!-- mobile -->
+                                <div :class="[isOpenDropdown && isMenu == 'pelaporan' ? 'h-[80px]' : 'h-0']"
+                                    class="submenu-mobile submenu-pelaporan w-full h-0 bg-white overflow-hidden  transition-all duration-300 xl:hidden">
+                                    <div class="box-dropdown pt-1">
+                                        <a href="https://www.lapor.go.id/" target="_blank"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Lapor</a>
+                                        <a href="wbs.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">WBS</a>
+                                    </div>
+                                </div>
+                                <!-- dekstop -->
+                                <div
+                                    class=" absolute top-11 rounded-2xl p-4 bg-white submenu submenu-tentang-kami w-[107px] overflow-hidden   transition-all duration-300 hidden xl:block invisible opacity-0 group-hover:visible group-hover:opacity-100">
+                                    <div class="box-dropdown pt-1">
+                                        <a href="https://www.lapor.go.id/" target="_blank"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Lapor</a>
+                                        <a href="wbs.html"
+                                            class="block px-3 py-2  text-sm text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">WBS</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="https://kms.kemenkopm.go.id/" target="_blank" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Produk
+                                Pengetahuan</a>
+                            <a href="kontak.html" @click="toggleMenu()"
+                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Kontak</a>
+                            <div class="xl:flex items-center px-6 md:px-10 xl:ps-2 xl:px-0 xl:gap-x-4 ">
+                                <div class="w-6 h-6 mt-2 xl:mt-0">
+                                    <img src="./src/img/search-icon.svg"
+                                        class="w-full h-full object-center object-cover" alt="">
+                                </div>
+                                <div
+                                    class="toogle-language mt-3 lg:mt-4 xl:mt-0 flex items-center justify-between   rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
+                                    <div @click="lang = 'ID'"
+                                        class="id-language py-1 px-2 active-language transition-all duration-300 cursor-pointer"
+                                        :class="{'active-language': lang == 'ID'}">
+                                        ID</div>
+                                    <div @click="lang = 'EN'"
+                                        class="en-language py-1 px-2 cursor-pointer transition-all duration-300"
+                                        :class="{'active-language': lang == 'EN'}">EN
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="kontak w-full pt-36 pb-6 md:pt-40 mb:pb-0 xl:pt-48 xl:pb-[24px]">
+        <div class="container w-full mx-auto px-7">
+            <div class=" xl:w-[1150px] xl:mx-auto">
+                <a href=""
+                    class=" md:text-start text-black-base text-base md:text-lg lg:text-xl font-bold font-montserrat mb-7 md:mb-11 xl:mb-12 flex justify-start items-center gap-1 xl:gap-2">
+                    <div class="icon-arrow w-4 h-4 md:w-5 md:h-5">
+                        <img src="./src/img/arrow-left.svg" class="w-full h-full" alt="">
+                    </div>
+                    <span class="">Kembali</span>
+                </a>
+
+                <a href="#"
+                    class="mb-8 md:mb-10 lg:mb-12 xl:mb-[54px] flex items-center gap-2 px-4 lg:px-5 py-3 lg:py-4 xl:py-6 xl:px-10 xl:w-[209px] xl:h-[72px] xl:flex xl:justify-center xl:items-center float-right rounded-full border-[1.5px] border-primary text-primary  font-montserrat font-bold text-[11px] md:text-xs  lg:text-sm xl:text-base">
+                    <div class="box-icon-download w-[14px] md:w-[18px] lg:w-5 xl:w-6 ">
+                        <img src="./src/img/unduh-pdf.svg" class="w-full" alt="">
+                    </div>
+                    <span>unduh PDF</span>
+                </a>
+
+                <div
+                    class="box-img-berita w-full xl:w-[1024px] xl:mx-auto h-[190px] md:h-[370px] lg:h-[460px] xl:h-[538px] rounded-2xl lg:rounded-3xl xl:rounded-4xl overflow-hidden mb-8 xl:mb-[70px]">
+                    <img src="./src/img/berita/berita-2.webp" class="w-full h-full object-cover object-center"
+                        alt="image berita 2">
+                </div>
+
+                <h1
+                    class="title-berita mb-4 md:mb-7 xl:mb-9 text-black-base font-bold font-montserrat text-lg  md:text-xl lg:text-2xl">
+                    Lantik 4 Pejabat Tinggi, Menko Muhaimin Pesan Pentingnya Bekerja Keras untuk Mewujudkan Masyarakat
+                    Berdaya dan Mandiri
+                </h1>
+
+                <div class="w-full flex gap-4 md:gap-8 xl:gap-16 items-center mb-11">
+                    <button
+                        class="border-[1.5px] xl:w-[174px] xl:h-[72px] xl:py-6 xl:px-10 font-roboto border-primary text-primary font-bold px-4 md:px-5 py-3 md:py-3 lg:px-6 lg:py-4 text-sm lg:text-base rounded-full md:mb-0">siaran
+                        pers</button>
+                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                        <div class="box-img w-[18px] h-[18px] xl:w-5 xl:h-5  md:w-6 md:h-6">
+                            <img src="./src/img/calendar-detail-berita.svg" alt="">
+                        </div>
+                        <p class="font-bold text-black-base font-montserrat text-xs md:text-sm">13
+                            November 2024</p>
+                    </div>
+                </div>
+
+                <div
+                    class="content-berita font-roboto text-black-base text-justify text-sm md:text-base lg:text-lg xl:text-xl  leading-6 md:leading-8 xl:leading-12 mb-8 md:mb-10 lg:mb-12 xl:mb-[70px]">
+                    <p class="mb-4 xl:mb-6">
+                        <span class="text-gold font-bold">KEMENKO PM</span> -- Menteri Koordinator Bidang Pemberdayaan
+                        Masyarakat Muhaimin Iskandar melantik 4 pejabat pimpinan tinggi madya Kementerian Koordinator
+                        Bidang Pemberdayaan Masyarakat.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Keempat pejabat yang dilantik ialah Andie Megantara sebagai Sekretaris Kementerian Koordinator
+                        Bidang Pemberdayaan Masyarakat, Nunung Nuryantono sebagai Deputi Bidang Koordinasi Peningkatan
+                        Kesejahteraan Sosial, Abdul Haris sebagai Deputi Bidang Koordinasi Pemberdayaan Masyarakat Desa,
+                        Daerah Tertinggal, dan Daerah Tertentu, dan Dyah Tri Komalasari sebagai Staf Ahli Bidang
+                        Hubungan Kelembagaan dan Hubungan Masyarakat.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Pelantikan dilakukan di kantor Kementerian Koordinator Bidang Pemberdayaan Masyarakat lantai 16,
+                        Jakarta, 19 Desember 2024.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Dalam sambutannya, Menko Muhaimin menjelaskan bahwa Kementerian Koordinator Bidang Pemberdayaan
+                        Masyarakat merupakan kementerian baru yang dibentuk dengan fokus tugas menyelenggarakan
+                        sinkronisasi dan koordinasi serta pengendalian pelaksanaan urusan kementerian-kementerian dalam
+                        penyelenggaraan di bidang pemberdayaan masyarakat.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Sehingga, menurut Muhaimin, dalam konteks pemberdayaan masyarakat, Kementerian Koordinator
+                        Bidang Pemberdayaan Masyarakat harus mengawal tercapainya target pembangunan sesuai RPJM
+                        2025-2029.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        “Kementerian Koordinator Bidang Pemberdayaan Masyarakat merupakan kementerian yang dibentuk
+                        khusus memiliki peran strategis untuk mengintegrasikan agar penanganan kemiskinan sekaligus
+                        menjadi satu kesatuan dengan pemberdayaan menuju masyarakat yan mandiri”, jelas Muhaimin.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Muhaimin pun berpesan, agar seluruh unsur di Kementerian Koordinator Bidang Pemberdayaan
+                        Masyarakat dapat bekerja keras dan fokus untuk menguatkan kooordinasi dan sinergi dari hulu
+                        hingga hilir dengan para pemangku kepentingan.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Karena dengan koordinasi dan sinergi, maka transformasi kesejahteraan masyarakat dapat terwujud
+                        melalui leglasi program dan pada akhirnya dapat mendorong keluarga miskin ekstrem, miskin, dan
+                        rentan miskin, dapat menjadi berdaya dan mandiri.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Karena dengan koordinasi dan sinergi, maka transformasi kesejahteraan masyarakat dapat terwujud
+                        melalui leglasi program dan pada akhirnya dapat mendorong keluarga miskin ekstrem, miskin, dan
+                        rentan miskin, dapat menjadi berdaya dan mandiri.
+                    </p>
+                    <p class="mb-4 xl:mb-6">
+                        Turut hadir pada pelantikan pimpinan tinggi madya, Kepala Badan Percepatan Pengentasan
+                        Kemiskinan Budiman Sudjatmiko, Wakil Kepala Badan Percepatan Pengentasan Kemiskinan Nani
+                        Sudaryati Deyang, Plt Kepala Lembaga Administrasi Negara Muhammad Taufik, Sekretaris Kementerian
+                        Koordinator Bidang Pembangunan Manusia dan Kebudayaan Imam Mahdi, Sekretaris Jenderal
+                        Kementerian Ketenagakerjaan Anwar Sanusi, Sekretaris Jenderal Kementerian Sosial Rubben Rico,
+                        Sekretaris Jenderal Kementerian Desa dan Pembangunan Daerah Tertinggal Taufik Madjid, serta
+                        perwakilan kementerian dan lembaga negara lainnya.
+                    </p>
+                </div>
+
+                <div class="box-sosmed flex items-center gap-2 lg:gap-3 xl:gap-4 mb-20">
+                    <a href=""
+                        class="sosmed-facebook w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] xl:w-[52px] xl:h-[52px] bg-black-base p-2.5 lg:p-3 xl:p-2 rounded-full flex justify-center items-center">
+                        <img src="./src/img/facebook.svg" class="" alt="facebook">
+                    </a>
+                    <a href=""
+                        class="sosmed-twitter w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] xl:w-[52px] xl:h-[52px] bg-black-base p-2.5 lg:p-3 xl:p-2 rounded-full flex justify-center items-center">
+                        <img src="./src/img/twitter.svg" class="" alt="twittler">
+                    </a>
+                    <a href=""
+                        class="sosmed-instagram w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] xl:w-[52px] xl:h-[52px] bg-black-base p-2.5 lg:p-3 xl:p-2 rounded-full flex justify-center items-center">
+                        <img src="./src/img/instagram.svg" class="" alt="instagram">
+                    </a>
+                    <a href=""
+                        class="sosmed-youtube w-[35px] h-[35px] lg:w-[45px] lg:h-[45px] xl:w-[52px] xl:h-[52px] bg-black-base p-2.5 lg:p-3 xl:p-2 rounded-full flex justify-center items-center">
+                        <img src="./src/img/youtube.svg" class="" alt="youtube">
+                    </a>
+                </div>
+
+
+                <div class="rekomendasi-berita">
+                    <div class="flex justify-between items-center font-bold text-[#393934] font-montserrat mb-10">
+                        <h1 class="text-lg md:text-2xl lg:text-4xl xl:text-[40px]">Rekomendasi</h1>
+                        <div class="flex items-center gap-2.5 md:gap-4">
+                            <div id="prevBtnBerita"
+                                class="btn-left bg-primary w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px] xl:w-[50px] xl:h-[50px] p-1.5 xl:p-2 rounded-full">
+                                <img src="./src/img/arrow-left-right.svg" class="-mt-[1px]" alt="">
+                            </div>
+                            <div id="nextBtnBerita"
+                                class="btn-right bg-primary w-[30px] h-[30px] md:w-[40px] md:h-[40px] lg:w-[45px] lg:h-[45px] xl:w-[50px] xl:h-[50px] p-1.5 xl:p-2 rounded-full">
+                                <img src="./src/img/arrow-left-right.svg" class="rotate-180 -mt-[1px]" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel-rekomendasi-berita owl-carousel owl-theme berita-container">
+                        <div class="card w-full rounded-[19.01px] overflow-hidden">
+                            <div class="card-header w-full h-[180px]">
+                                <img src="./src/img/berita/berita-3.webp"
+                                    class="w-full h-full object-cover object-center" alt="">
+                            </div>
+                            <div class="card-body px-2 py-4 text-black-base">
+                                <div class="w-full flex gap-6 md:gap-8 xl:gap-8 items-center mb-3">
+                                    <button
+                                        class="border-[1.5px] font-roboto border-[#014F98] text-[#014F98] font-semibold  w-[109px] h-[40px] py-3 px-2 text-xs rounded-full md:mb-0">Kabar
+                                        Terbaru</button>
+
+
+
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img xl:w-5 xl:h-5">
+                                            <img src="./src/img/calendar-detail-berita.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-black-base font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                </div>
+
+                                <h1 class="title-card-berita font-montserrat text-sm truncate font-bold mb-2">
+                                    Penyempurnaan DTSEN, Menko PM Muhaimin: Kunci Pengentasan Kemiskinan
+                                </h1>
+                                <p class="excerpt-berita font-roboto text[#3D3D3D] text-xs md:text-sm line-clamp-5">
+                                    Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar mengatakan Data
+                                    Tunggal Sosial Ekonomi Nasional (DTSEN) telah masuk pada tahap penyempurnaan. Hal
+                                    tersebut penting dilakukan agar penggunaan dan pemanfaatan data bisa valid dan
+                                    akurat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card w-full rounded-[19.01px] overflow-hidden">
+                            <div class="card-header w-full h-[180px]">
+                                <img src="./src/img/berita/berita-3.webp"
+                                    class="w-full h-full object-cover object-center" alt="">
+                            </div>
+                            <div class="card-body px-2 py-4 text-black-base">
+                                <div class="w-full flex gap-6 md:gap-8 xl:gap-8 items-center mb-3">
+                                    <button
+                                        class="border-[1.5px] font-roboto border-[#014F98] text-[#014F98] font-semibold  w-[109px] h-[40px] py-3 px-2 text-xs rounded-full md:mb-0">Kabar
+                                        Terbaru</button>
+
+
+
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img xl:w-5 xl:h-5">
+                                            <img src="./src/img/calendar-detail-berita.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-black-base font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                </div>
+
+                                <h1 class="title-card-berita font-montserrat text-sm truncate font-bold mb-2">
+                                    Penyempurnaan DTSEN, Menko PM Muhaimin: Kunci Pengentasan Kemiskinan
+                                </h1>
+                                <p class="excerpt-berita font-roboto text[#3D3D3D] text-xs md:text-sm line-clamp-5">
+                                    Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar mengatakan Data
+                                    Tunggal Sosial Ekonomi Nasional (DTSEN) telah masuk pada tahap penyempurnaan. Hal
+                                    tersebut penting dilakukan agar penggunaan dan pemanfaatan data bisa valid dan
+                                    akurat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card w-full rounded-[19.01px] overflow-hidden">
+                            <div class="card-header w-full h-[180px]">
+                                <img src="./src/img/berita/berita-3.webp"
+                                    class="w-full h-full object-cover object-center" alt="">
+                            </div>
+                            <div class="card-body px-2 py-4 text-black-base">
+                                <div class="w-full flex gap-6 md:gap-8 xl:gap-8 items-center mb-3">
+                                    <button
+                                        class="border-[1.5px] font-roboto border-[#014F98] text-[#014F98] font-semibold  w-[109px] h-[40px] py-3 px-2 text-xs rounded-full md:mb-0">Kabar
+                                        Terbaru</button>
+
+
+
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img xl:w-5 xl:h-5">
+                                            <img src="./src/img/calendar-detail-berita.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-black-base font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                </div>
+
+                                <h1 class="title-card-berita font-montserrat text-sm truncate font-bold mb-2">
+                                    Penyempurnaan DTSEN, Menko PM Muhaimin: Kunci Pengentasan Kemiskinan
+                                </h1>
+                                <p class="excerpt-berita font-roboto text[#3D3D3D] text-xs md:text-sm line-clamp-5">
+                                    Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar mengatakan Data
+                                    Tunggal Sosial Ekonomi Nasional (DTSEN) telah masuk pada tahap penyempurnaan. Hal
+                                    tersebut penting dilakukan agar penggunaan dan pemanfaatan data bisa valid dan
+                                    akurat.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card w-full rounded-[19.01px] overflow-hidden">
+                            <div class="card-header w-full h-[180px]">
+                                <img src="./src/img/berita/berita-3.webp"
+                                    class="w-full h-full object-cover object-center" alt="">
+                            </div>
+                            <div class="card-body px-2 py-4 text-black-base">
+                                <div class="w-full flex gap-6 md:gap-8 xl:gap-8 items-center mb-3">
+                                    <button
+                                        class="border-[1.5px] font-roboto border-[#014F98] text-[#014F98] font-semibold  w-[109px] h-[40px] py-3 px-2 text-xs rounded-full md:mb-0">Kabar
+                                        Terbaru</button>
+
+
+
+                                    <div class="tanggal-dokumen gap-1 xl:gap-2 flex items-center">
+                                        <div class="box-img xl:w-5 xl:h-5">
+                                            <img src="./src/img/calendar-detail-berita.svg" alt="">
+                                        </div>
+                                        <p class="font-bold text-black-base font-montserrat text-xs md:text-sm">13
+                                            November 2024</p>
+                                    </div>
+                                </div>
+
+                                <h1 class="title-card-berita font-montserrat text-sm truncate font-bold mb-2">
+                                    Penyempurnaan DTSEN, Menko PM Muhaimin: Kunci Pengentasan Kemiskinan
+                                </h1>
+                                <p class="excerpt-berita font-roboto text[#3D3D3D] text-xs md:text-sm line-clamp-5">
+                                    Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar mengatakan Data
+                                    Tunggal Sosial Ekonomi Nasional (DTSEN) telah masuk pada tahap penyempurnaan. Hal
+                                    tersebut penting dilakukan agar penggunaan dan pemanfaatan data bisa valid dan
+                                    akurat.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+
+    <footer class="pt-[88px] ">
+        <div class="footer-top py-11 bg-gold">
+            <div class="container px-6 xl:px-20 md:max-w-full xl:max-w-[1480px] xl:mx-auto">
+                <div class="md:flex xl:flex">
+                    <div class="md:w-1/2 lg:w-1/3 xl:w-1/3  footer-top-1 mb-8 md:mb-0">
+                        <div class="flex items-center gap-2 mb-4 font-montserrat">
+                            <div class="logo h-[55px] ">
+                                <img class="w-auto h-full object-center object-cover " src="./src/img/logokemenko.webp"
+                                    fetchpriority="high" loading="eager" alt="">
+                            </div>
+                            <div
+                                class="title-logo leading-4 md:leading-5  xl:leading-6 text-[12px] md:text-sm xl:text-sm font-bold">
+                                Kementerian Koordinator
+                                <br>
+                                Bidang Pemberdayaan Masyarakat
+                            </div>
+                        </div>
+                        <div
+                            class="box-address text-[12px] lg:text-sm xl:text-base text-black-base font-roboto font-semibold">
+                            <p class="mb-2">Jl. Medan Merdeka Barat No. 3. Jakarta Pusat
+                            </p>
+                            <p class="mb-2 ">Email : <a href="mailto:roinfohumas@kemenkopm.go.id"
+                                    class="underline">roinfohumas@kemenkopm.go.id</a>
+                            </p>
+                            <p class="mb-2">Whatsapp : <a
+                                    href="https://api.whatsapp.com/send/?phone=085880001949&text&type=phone_number&app_absent=0"
+                                    target="_blank" class="underline">085880001949</a>
+                            </p>
+                            <p class="mb-2">Telp : (+62) 21 345 9444
+                            </p>
+                        </div>
+
+                    </div>
+                    <div
+                        class="md:w-1/2 lg:w-2/3  xl:w-2/3  footer-top-2 md:pt-[65px] lg:pt-[98px] xl:pt-[111px]  md:mb-0 ">
+                        <div
+                            class="box-icon flex items-center justify-between w-[208px] mx-auto md:ms-auto md:mx-0 mb-4 xl:mb-6">
+                            <div
+                                class="logo flex items-center justify-center bg-black-base p-2 xl:p-0 w-9 h-9 xl:w-10 xl:h-10 rounded-full">
+                                <img src="./src/img/facebook.svg" alt="">
+                            </div>
+                            <div
+                                class="logo flex items-center justify-center bg-black-base p-2 xl:p-0 w-9 h-9 xl:w-10 xl:h-10 rounded-full">
+                                <img src="./src/img/twitter.svg" alt="">
+                            </div>
+                            <div
+                                class="logo flex items-center justify-center bg-black-base p-2 xl:p-0 w-9 h-9 xl:w-10 xl:h-10 rounded-full">
+                                <img src="./src/img/instagram.svg" alt="">
+                            </div>
+                            <div
+                                class="logo flex items-center justify-center bg-black-base p-2 xl:p-0 w-9 h-9 xl:w-10 xl:h-10 rounded-full">
+                                <img src="./src/img/youtube.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="box-menu">
+                            <ul
+                                class="text-[12px] xl:text-sm font-montserrat font-bold text-[#3D3D3D] w-full flex items-center justify-center md:justify-end flex-wrap gap-3 xl:gap-6">
+                                <li>Beranda</li>
+                                <li>Tentang Kami</li>
+                                <li>Media Center</li>
+                                <li>PPID</li>
+                                <li>JDIH</li>
+                                <li>Pelaporan</li>
+                                <li>Produk Pengetahuan</li>
+                                <li>Kontak</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="footer-bottom py-5 xl:py-6 px-6 xl:px-0 bg-primary font-montserrat text-sm lg:text-base xl:text-[18px]  ">
+            <div class="container  xl:px-20 md:max-w-full xl:max-w-[1480px] xl:mx-auto">
+                <p class="text-white font-semibold">© Kementerian Koordinator Bidang Pemberdayaan Masyarakat, 2025.
+                    Copyright</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="./src/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="./src/dist/owlcarousel/owl.carousel.min.js"></script>
+    <script type="module" src="./src/js/alpine.js"></script>
+    <script>
+        $(document).ready(function () {
+            var owlberita = $('.owl-carousel-rekomendasi-berita');
+            owlberita.owlCarousel({
+                loop: true,
+                responsiveClass: true,
+                margin: 8,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        
+
+                    },
+                    768: {
+                        items: 2,
+
+                    },
+                    1024: {
+                        items: 2,
+
+                    },
+                    1280: {
+                        items: 3,
+
+                    }
+                }
+            });
+
+            $('#nextBtnBerita').click(function () {
+                owlberita.trigger('next.owl.carousel');
+            })
+
+            $('#prevBtnBerita').click(function () {
+                owlberita.trigger('prev.owl.carousel');
+            });
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>
