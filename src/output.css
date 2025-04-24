@@ -279,20 +279,8 @@
   .inset-x-0 {
     inset-inline: calc(var(--spacing) * 0);
   }
-  .inset-y-\[60px\] {
-    inset-block: 60px;
-  }
-  .inset-y-\[61px\] {
-    inset-block: 61px;
-  }
   .inset-y-\[62px\] {
     inset-block: 62px;
-  }
-  .inset-y-\[63px\] {
-    inset-block: 63px;
-  }
-  .inset-y-\[65px\] {
-    inset-block: 65px;
   }
   .inset-y-\[75px\] {
     inset-block: 75px;
@@ -4434,6 +4422,11 @@
       flex-direction: row;
     }
   }
+  .xl\:flex-nowrap {
+    @media (width >= 80rem) {
+      flex-wrap: nowrap;
+    }
+  }
   .xl\:flex-wrap {
     @media (width >= 80rem) {
       flex-wrap: wrap;
@@ -4574,6 +4567,11 @@
       padding-inline: calc(var(--spacing) * 0);
     }
   }
+  .xl\:px-1 {
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 1);
+    }
+  }
   .xl\:px-2 {
     @media (width >= 80rem) {
       padding-inline: calc(var(--spacing) * 2);
@@ -4584,9 +4582,19 @@
       padding-inline: calc(var(--spacing) * 3);
     }
   }
+  .xl\:px-4 {
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 4);
+    }
+  }
   .xl\:px-6 {
     @media (width >= 80rem) {
       padding-inline: calc(var(--spacing) * 6);
+    }
+  }
+  .xl\:px-7 {
+    @media (width >= 80rem) {
+      padding-inline: calc(var(--spacing) * 7);
     }
   }
   .xl\:px-8 {
