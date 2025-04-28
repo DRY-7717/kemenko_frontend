@@ -26,6 +26,14 @@
   @apply bg-gold
 }
 
+.owl-carousel-ppid .owl-dots button.owl-dot span{
+  @apply transition-all duration-300 bg-[#888888]
+}
+
+.owl-carousel-ppid .owl-dots button.owl-dot.active span{
+  @apply bg-gold w-[26.5px]
+}
+
 .owl-carousel-kabar-terbaru .owl-item.fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
