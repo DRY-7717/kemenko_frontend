@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kemenko PM</title>
+    <title>Kementerian Koordinator Bidang Pemberdayaan Masyarakat</title>
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -32,7 +32,9 @@
         },
         toggleDropdown(menu){
             this.isMenu = menu
-            this.isOpenDropdown = !this.isOpenDropdown   
+            this.isOpenDropdown = !this.isOpenDropdown
+
+            
         }
     }" class="navbar fixed w-full z-[9999]  bg-white shadow-[0px_16px_24px_0px_rgba(0,0,0,0.25)]  rounded-bl-4xl rounded-br-4xl transition-all duration-200 font-montserrat">
             <div class="container py-4 px-6 md:max-w-full xl:max-w-[1480px] xl:mx-auto ">
@@ -74,7 +76,7 @@
                         class="absolute inset-y-[75px] inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 xl:p-0 xl:top-0 xl:relative xl:bg-transparent xl:w-auto xl:opacity-100 xl:translate-x-0 xl:flex xl:items-center h-dvh xl:h-auto">
                         <div
                             class=" font-bold text-sm xl:text-xm flex flex-col -mx-6 xl:flex-row xl:items-center xl:mx-0">
-                            <a href="#" @click="toggleMenu()"
+                            <a href="index.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Beranda</a>
                             <div @click="toggleDropdown('aboutus')"
                                 class="xl:relative group px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100  active-tab cursor-pointer">
@@ -104,12 +106,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" @click="toggleMenu()"
+                            <a href="media_center.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Media
                                 Center</a>
-                            <a href="#" @click="toggleMenu()"
+                            <a href="underconstruction.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">PPID</a>
-                            <a href="jdih.html" @click="toggleMenu()"
+                            <a href="underconstruction.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">JDIH</a>
                             <div @click="toggleDropdown('pelaporan')"
                                 class="xl:relative group px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100  cursor-pointer">
@@ -135,9 +137,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="https://kms.kemenkopm.go.id/" target="_blank" @click="toggleMenu()"
-                                class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Produk
-                                Pengetahuan</a>
+                          
                             <a href="kontak.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Kontak</a>
                             <div class="xl:flex items-center px-6 md:px-10 xl:ps-2 xl:px-0 xl:gap-x-4 ">
@@ -237,11 +237,12 @@
                         class="subtitle  w-full text-sm md:text-base lg:text-lg xl:text-base xl:flex xl:justify-between xl:items-center">
                         <p class="font-roboto text-[#6D6C63]  mb-2 xl:mb-0">Informasi terkini mengenai kebijakan,
                             program, dan kegiatan Kementerian Koordinator Bidang Pemberdayaan Masyarakat</p>
-                        <a href="" class="block text-primary font-montserrat  font-bold">Lihat lainnya</a>
+                        <a href="siaran-pers.html" class="block text-primary font-montserrat  font-bold">Lihat
+                            lainnya</a>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 mt-6 sm:mt-10">
-                    <a href="galeridetail.html">
+                    <a href="detail-berita.html">
                         <div class=" card p-0">
                             <img src="./src/img/berita/berita-1.png" alt="Berita"
                                 class="w-full h-45 object-cover rounded-t-3xl">
@@ -251,11 +252,12 @@
                                     <span
                                         class="border-[1.5px] border-primary text-primary text-[10px] xl:text-xs  px-2 py-1 sm:px-3 sm:py-2 xl:w-[95px] xl:h-[40px] xl:flex xl:items-center xl:justify-center rounded-full font-semibold font-roboto ">Siaran
                                         Pers</span>
-    
+
                                     <div class="flex items-center gap-2">
                                         <img src="./src/img/calendar-detail-berita.svg" alt="Kalender"
                                             class="w-3 h-3 sm:w-4 sm:h-4">
-                                        <span class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
+                                        <span
+                                            class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
                                             November 2024</span>
                                     </div>
                                 </div>
@@ -263,19 +265,19 @@
                                     Menko
                                     Muhaimin Pesa...
                                 </h3>
-    
+
                                 <p class="text-[#3D3D3D] text-xs lg:text-sm mt-2 sm:mt-3 font-roboto  ">
                                     KEMENKO PM -- Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar
                                     melantik 4 pejabat pimpinan tinggi madya Kementerian Koordinator Bidang Pemberdayaan
                                     Masyarakat. Bidan...
                                 </p>
-    
-    
-    
+
+
+
                             </div>
                         </div>
                     </a>
-                    <a href="galeridetail.html">
+                    <a href="detail-berita.html">
                         <div class=" card p-0">
                             <img src="./src/img/berita/berita-1.png" alt="Berita"
                                 class="w-full h-45 object-cover rounded-t-3xl">
@@ -285,11 +287,12 @@
                                     <span
                                         class="border-[1.5px] border-primary text-primary text-[10px] xl:text-xs  px-2 py-1 sm:px-3 sm:py-2 xl:w-[95px] xl:h-[40px] xl:flex xl:items-center xl:justify-center rounded-full font-semibold font-roboto ">Siaran
                                         Pers</span>
-    
+
                                     <div class="flex items-center gap-2">
                                         <img src="./src/img/calendar-detail-berita.svg" alt="Kalender"
                                             class="w-3 h-3 sm:w-4 sm:h-4">
-                                        <span class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
+                                        <span
+                                            class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
                                             November 2024</span>
                                     </div>
                                 </div>
@@ -297,19 +300,19 @@
                                     Menko
                                     Muhaimin Pesa...
                                 </h3>
-    
+
                                 <p class="text-[#3D3D3D] text-xs lg:text-sm mt-2 sm:mt-3 font-roboto  ">
                                     KEMENKO PM -- Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar
                                     melantik 4 pejabat pimpinan tinggi madya Kementerian Koordinator Bidang Pemberdayaan
                                     Masyarakat. Bidan...
                                 </p>
-    
-    
-    
+
+
+
                             </div>
                         </div>
                     </a>
-                    <a href="galeridetail.html">
+                    <a href="detail-berita.html">
                         <div class=" card p-0">
                             <img src="./src/img/berita/berita-1.png" alt="Berita"
                                 class="w-full h-45 object-cover rounded-t-3xl">
@@ -319,11 +322,12 @@
                                     <span
                                         class="border-[1.5px] border-primary text-primary text-[10px] xl:text-xs  px-2 py-1 sm:px-3 sm:py-2 xl:w-[95px] xl:h-[40px] xl:flex xl:items-center xl:justify-center rounded-full font-semibold font-roboto ">Siaran
                                         Pers</span>
-    
+
                                     <div class="flex items-center gap-2">
                                         <img src="./src/img/calendar-detail-berita.svg" alt="Kalender"
                                             class="w-3 h-3 sm:w-4 sm:h-4">
-                                        <span class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
+                                        <span
+                                            class="font-bold text-black font-montserrat text-xs md:text-xs xl:text-sm">13
                                             November 2024</span>
                                     </div>
                                 </div>
@@ -331,19 +335,19 @@
                                     Menko
                                     Muhaimin Pesa...
                                 </h3>
-    
+
                                 <p class="text-[#3D3D3D] text-xs lg:text-sm mt-2 sm:mt-3 font-roboto  ">
                                     KEMENKO PM -- Menteri Koordinator Bidang Pemberdayaan Masyarakat Muhaimin Iskandar
                                     melantik 4 pejabat pimpinan tinggi madya Kementerian Koordinator Bidang Pemberdayaan
                                     Masyarakat. Bidan...
                                 </p>
-    
-    
-    
+
+
+
                             </div>
                         </div>
                     </a>
-                 
+
 
 
 
@@ -367,24 +371,43 @@
                         class="subtitle  w-full text-sm md:text-base lg:text-lg xl:text-base xl:flex xl:justify-between xl:items-center">
                         <p class="font-roboto text-white  mb-2 xl:mb-0">Informasi terkini mengenai kebijakan, program,
                             dan kegiatan Kementerian Koordinator Bidang Pemberdayaan Masyarakat</p>
-                        <a href="" class="block text-white font-montserrat  font-bold">Lihat lainnya</a>
+                        <a href="galeri.html" class="block text-white font-montserrat  font-bold">Lihat lainnya</a>
                     </div>
                 </div>
                 <div
                     class="w-full md:w-full xl:w-full mx-auto bg-[#BD9151] text-white p-2 md:p-3 rounded-xl shadow-lg mt-6 lg:mt-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 1" />
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 2" />
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 3" />
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 4" />
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 5" />
-                        <img src="./src/img/berita/berita-1.png"
-                            class="w-full h-[240px] object-cover rounded-3xl border-2 border-white" alt="Galeri 6" />
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 1" />
+                        </a>
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 2" />
+                        </a>
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 3" />
+                        </a>
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 4" />
+                        </a>
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 5" />
+                        </a>
+                        <a href="galeridetail.html" class="">
+                            <img src="./src/img/berita/berita-1.png"
+                                class="w-full h-[240px] object-cover rounded-3xl border-2 border-white"
+                                alt="Galeri 6" />
+                        </a>
+                       
                     </div>
                 </div>
 
@@ -420,8 +443,8 @@
                                     class="underline">roinfohumas@kemenkopm.go.id</a>
                             </p>
                             <p class="mb-2">Whatsapp : <a
-                                    href="https://api.whatsapp.com/send/?phone=085880001949&text&type=phone_number&app_absent=0"
-                                    target="_blank" class="underline">085880001949</a>
+                                    href="https://api.whatsapp.com/send/?phone=08111133067&text&type=phone_number&app_absent=0"
+                                    target="_blank" class="underline">08111133067</a>
                             </p>
                             <p class="mb-2">Telp : (+62) 21 345 9444
                             </p>
