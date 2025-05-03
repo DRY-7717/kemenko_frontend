@@ -5705,6 +5705,11 @@
       justify-content: space-between;
     }
   }
+  .\32 xl\:justify-evenly {
+    @media (width >= 96rem) {
+      justify-content: space-evenly;
+    }
+  }
   .\32 xl\:gap-\[80px\] {
     @media (width >= 96rem) {
       gap: 80px;
@@ -5713,6 +5718,11 @@
   .\32 xl\:bg-red-400 {
     @media (width >= 96rem) {
       background-color: var(--color-red-400);
+    }
+  }
+  .\32 xl\:px-0 {
+    @media (width >= 96rem) {
+      padding-inline: calc(var(--spacing) * 0);
     }
   }
 }
