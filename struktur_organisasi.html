@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <a href="kontak.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Kontak</a>
                             <div class="xl:flex items-center px-6 md:px-10 xl:ps-2 xl:px-0 xl:gap-x-4 ">
@@ -140,8 +140,9 @@
                                     <img src="./src/img/search-icon.svg"
                                         class="w-full h-full object-center object-cover" alt="">
                                 </div>
+                                <!-- flex items-center justify-between -->
                                 <div
-                                    class="toogle-language mt-3 lg:mt-4 xl:mt-0 flex items-center justify-between   rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
+                                    class="hidden toogle-language mt-3 lg:mt-4 xl:mt-0     rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
                                     <div @click="lang = 'ID'"
                                         class="id-language py-1 px-2 active-language transition-all duration-300 cursor-pointer"
                                         :class="{'active-language': lang == 'ID'}">
@@ -176,11 +177,13 @@
             </div>
 
             <div class="w-full struktur-1 text-center font-semibold text-black-base mb-5 xl:mb-12">
-                <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  md:mx-auto overflow-hidden rounded-3xl  mb-5 xl:mb-12">
+                <div
+                    class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  md:mx-auto overflow-hidden rounded-3xl  mb-5 xl:mb-12">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-1.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-1.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
@@ -191,11 +194,13 @@
                             Pemberdayaan Masyarakat</p>
                     </div>
                 </div>
-                <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  md:mx-auto overflow-hidden rounded-3xl">
+                <div
+                    class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  md:mx-auto overflow-hidden rounded-3xl">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-2.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-2.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
@@ -208,62 +213,74 @@
                     </div>
                 </div>
             </div>
-           
-            <div class="w-full struktur-2 flex flex-wrap xl:flex-nowrap  gap-y-5 md:gap-3 md:gap-y-5 lg:gap-5 xl:gap-x-3  md:justify-center  text-center font-semibold text-black-base mb-5 xl:mb-12 xl:px-4">
+
+            <div
+                class="w-full struktur-2 flex flex-wrap xl:flex-nowrap  gap-y-5 md:gap-3 md:gap-y-5 lg:gap-5 xl:gap-x-3  md:justify-center  text-center font-semibold text-black-base mb-5 xl:mb-12 xl:px-4">
                 <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  overflow-hidden rounded-3xl">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-3.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-3.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
                         class="card-body pt-1.5 pb-7 md:pt-3  md:pb-10 lg:pb-14 lg:pt-8 xl:pt-3 xl:pb-9  px-7 bg-gold h-full ">
-                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Leontinus Alpha Edison</p>
-                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi Pemberdayaan Ekonomi Masyarakat dan Pelindungan Pekerja Migran</p>
+                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Leontinus Alpha
+                            Edison</p>
+                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi
+                            Pemberdayaan Ekonomi Masyarakat dan Pelindungan Pekerja Migran</p>
                     </div>
                 </div>
                 <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  overflow-hidden rounded-3xl">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-4.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-4.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
                         class="card-body pt-1.5 pb-7 md:pt-3  md:pb-10 lg:pb-14 lg:pt-8 xl:pt-3 xl:pb-9  px-7 bg-gold h-full ">
-                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Nunung Nuryartono</p>
-                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi Peningkatan Kesejahteraan Sosial</p>
+                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Nunung Nuryartono
+                        </p>
+                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi
+                            Peningkatan Kesejahteraan Sosial</p>
                     </div>
                 </div>
                 <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  overflow-hidden rounded-3xl">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-5.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-5.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
                         class="card-body pt-1.5 pb-7 md:pt-3  md:pb-10 lg:pb-14 lg:pt-8 xl:pt-3 xl:pb-9  px-7 bg-gold h-full ">
                         <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Abdul Haris</p>
-                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi Pemberdayaan Masyarakat Desa, Daerah Tertinggal, dan Daerah Tertentu</p>
+                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Deputi Bidang Koordinasi
+                            Pemberdayaan Masyarakat Desa, Daerah Tertinggal, dan Daerah Tertentu</p>
                     </div>
                 </div>
-              
+
             </div>
-            <div class="w-full struktur-3 flex flex-wrap gap-y-5 md:gap-3 lg:gap-5 xl:gap-x-[32px]  md:justify-center  text-center font-semibold text-black-base mb-5">
-               
+            <div
+                class="w-full struktur-3 flex flex-wrap gap-y-5 md:gap-3 lg:gap-5 xl:gap-x-[32px]  md:justify-center  text-center font-semibold text-black-base mb-5">
+
                 <div class="card-struktur  w-full md:w-[350px] lg:w-[450px] xl:w-[400px]  overflow-hidden rounded-3xl">
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-6.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-6.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
                         class="card-body pt-1.5 pb-7 md:pt-3  md:pb-10 lg:pb-14 lg:pt-8 xl:pt-3 xl:pb-9  px-7 bg-gold h-full ">
                         <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Sugeng Bahagijo</p>
-                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Staf Ahli Menteri Bidang Pembangunan Ekonomi dan Digitalisasi
+                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Staf Ahli Menteri Bidang
+                            Pembangunan Ekonomi dan Digitalisasi
                         </p>
                     </div>
                 </div>
@@ -271,20 +288,23 @@
                     <div class="card-header pt-5 pb-7 md:pt-10 md:pb-14 xl:pt-6 xl:pb-8 bg-primary ">
                         <div
                             class="box-profile-struktur w-[150px] h-[150px] md:w-[180px] md:h-[180px] lg:w-[200px] lg:h-[200px] mx-auto rounded-full overflow-hidden bg-white">
-                            <img src="./src/img/struktur-7.webp" fetchpriority="high" loading="eager" class="w-full h-full" alt="">
+                            <img src="./src/img/struktur-7.webp" fetchpriority="high" loading="eager"
+                                class="w-full h-full" alt="">
                         </div>
                     </div>
                     <div
                         class="card-body pt-1.5 pb-7 md:pt-3  md:pb-10 lg:pb-14 lg:pt-8 xl:pt-3 xl:pb-9  px-7 bg-gold h-full ">
-                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Dyah Tri Kumolosari</p>
-                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Staf Ahli Menteri Bidang Hubungan Antar Lembaga dan Masyarakat
+                        <p class="text-2xl md:text-3xl lg:text-4xl xl:text-2xl font-montserrat mb-4">Dyah Tri Kumolosari
+                        </p>
+                        <p class="text-lg md:text-2xl lg:text-3xl xl:text-lg font-roboto">Staf Ahli Menteri Bidang
+                            Hubungan Antar Lembaga dan Masyarakat
                         </p>
                     </div>
                 </div>
-              
+
             </div>
-          
-            
+
+
         </div>
     </section>
 

@@ -145,8 +145,9 @@
                                     <img src="./src/img/search-icon.svg"
                                         class="w-full h-full object-center object-cover" alt="">
                                 </div>
+                                <!-- flex items-center justify-between -->
                                 <div
-                                    class="toogle-language mt-3 lg:mt-4 xl:mt-0 flex items-center justify-between   rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
+                                    class="hidden toogle-language mt-3 lg:mt-4 xl:mt-0     rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
                                     <div @click="lang = 'ID'"
                                         class="id-language py-1 px-2 active-language transition-all duration-300 cursor-pointer"
                                         :class="{'active-language': lang == 'ID'}">

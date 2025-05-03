@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <a href="kontak.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Kontak</a>
                             <div class="xl:flex items-center px-6 md:px-10 xl:ps-2 xl:px-0 xl:gap-x-4 ">
@@ -140,8 +140,9 @@
                                     <img src="./src/img/search-icon.svg"
                                         class="w-full h-full object-center object-cover" alt="">
                                 </div>
+                                <!-- flex items-center justify-between -->
                                 <div
-                                    class="toogle-language mt-3 lg:mt-4 xl:mt-0 flex items-center justify-between   rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
+                                    class="hidden toogle-language mt-3 lg:mt-4 xl:mt-0     rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
                                     <div @click="lang = 'ID'"
                                         class="id-language py-1 px-2 active-language transition-all duration-300 cursor-pointer"
                                         :class="{'active-language': lang == 'ID'}">
@@ -168,9 +169,17 @@
         <div class="container w-full mx-auto px-7">
             <div class=" flex flex-wrap md:justify-between gap-y-8 md:gap-y-0 xl:w-[1150px] xl:mx-auto ">
                 <div class="desc-hero order-2 md:order-1 md:w-[400px] lg:w-[540px] xl:w-[710px]">
-                    <h1 class="font-montserrat text-black-base font-bold text-xl md:text-3xl lg:text-5xl xl:text-6xl mb-4 lg:mb-6 xl:mb-8">Whistle Blowing System Kemenko PM</h1>
-                    <p class="font-roboto text-sm lg:text-xl xl:text-2xl xl:leading-12 text-black-base mb-4 lg:mb-7 xl:mb-8">Lorem ipsum dolor sit amet consectetur. Ultrices consequat arcu suspendisse turpis enim ipsum condimentum. Leo neque pulvinar aliquam dui. Libero etiam arcu ac potenti in ornare. Cursus massa consectetur aliquet cursus nec laoreet molestie sit nullam.</p>
-                    <a href="underconstruction.html" class="btn-aduan font-montserrat font-bold bg-primary text-white w-28 lg:w-44 xl:w-[180px] xl:h-[72px] px-4 py-2.5 lg:py-4 text-xs lg:text-base rounded-full text-center flex justify-center items-center">Buat Aduan</a>
+                    <h1
+                        class="font-montserrat text-black-base font-bold text-xl md:text-3xl lg:text-5xl xl:text-6xl mb-4 lg:mb-6 xl:mb-8">
+                        Whistle Blowing System Kemenko PM</h1>
+                    <p
+                        class="font-roboto text-sm lg:text-xl xl:text-2xl xl:leading-12 text-black-base mb-4 lg:mb-7 xl:mb-8">
+                        Lorem ipsum dolor sit amet consectetur. Ultrices consequat arcu suspendisse turpis enim ipsum
+                        condimentum. Leo neque pulvinar aliquam dui. Libero etiam arcu ac potenti in ornare. Cursus
+                        massa consectetur aliquet cursus nec laoreet molestie sit nullam.</p>
+                    <a href="underconstruction.html"
+                        class="btn-aduan font-montserrat font-bold bg-primary text-white w-28 lg:w-44 xl:w-[180px] xl:h-[72px] px-4 py-2.5 lg:py-4 text-xs lg:text-base rounded-full text-center flex justify-center items-center">Buat
+                        Aduan</a>
                 </div>
                 <div class="img-hero w-[280px] lg:w-[380px] xl:w-[400px]  mx-auto md:mx-0 order-1 md:order-2">
                     <img src="./src/img/illustration-hero-wbs.svg" class="w-full" alt="">
@@ -181,120 +190,171 @@
     <section class="layanan w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
         <div class="container w-full mx-auto px-7">
             <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Layanan</h1>
-               <div class="grid grid-cols-1 md:grid-cols-2 px-4 gap-4 md:gap-0 md:px-0 md:w-[580px] lg:w-[720px] xl:w-[850px] md:mx-auto">
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-br-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
+                <h1
+                    class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">
+                    Layanan</h1>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 px-4 gap-4 md:gap-0 md:px-0 md:w-[580px] lg:w-[720px] xl:w-[850px] md:mx-auto">
+                    <div
+                        class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-br-none">
+                        <div
+                            class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
                             <img src="./src/img/layanan-1.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Mudah digunakan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Layanan WBS sangat mudah digunakan, cukup login ke dalam aplikasi dan masukkan kejadian yang mengindikasikan kecurangan di lingkungan Kementerian Komunikasi dan Digital.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Mudah digunakan</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Layanan WBS
+                            sangat mudah digunakan, cukup login ke dalam aplikasi dan masukkan kejadian yang
+                            mengindikasikan kecurangan di lingkungan Kementerian Komunikasi dan Digital.</p>
                     </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-bl-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
+                    <div
+                        class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-bl-none">
+                        <div
+                            class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
                             <img src="./src/img/layanan-2.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Kerahasiaan informasi pribadi</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda akan dijamin kerahasiaannya oleh kami. Anda boleh menggunakan nama samaran atau anonim dalam melakukan laporan agar data pribadi Anda tetap rahasia.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Kerahasiaan informasi pribadi</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda
+                            akan dijamin kerahasiaannya oleh kami. Anda boleh menggunakan nama samaran atau anonim dalam
+                            melakukan laporan agar data pribadi Anda tetap rahasia.</p>
                     </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tr-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
+                    <div
+                        class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tr-none">
+                        <div
+                            class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
                             <img src="./src/img/layanan-3.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Keamanan informasi aduan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Kami menggunakan prosedur penanganan yang dapat menjamin perlindungan terhadap informasi aduan Anda, sehingga setiap laporan akan diproses secara rahasia.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Keamanan informasi aduan</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Kami
+                            menggunakan prosedur penanganan yang dapat menjamin perlindungan terhadap informasi aduan
+                            Anda, sehingga setiap laporan akan diproses secara rahasia.</p>
                     </div>
-                    <div class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tl-none">
-                        <div class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
+                    <div
+                        class="layanan-box p-4 md:p-0 md:pt-4 md:px-4 md:pb-8 xl:p-0   xl:px-8 xl:pt-6 xl:pb-12 border-[3px] md:border-[4px] border-primary rounded-4xl md:rounded-tl-none">
+                        <div
+                            class="box-img-layanan w-20 lg:w-32 xl:w-[136px] h-[75px] lg:h-32 xl:h-[120px] mb-4 xl:mb-6">
                             <img src="./src/img/layanan-4.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Membantu Pemerintah</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Dengan menggunakan layanan ini, maka Anda ikut membantu pemerintah dalam meminimalisir penyelewangan tugas dan wewenang yang terjadi di lingkungan Kementerian Komunikasi dan Digital.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Membantu Pemerintah</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Dengan
+                            menggunakan layanan ini, maka Anda ikut membantu pemerintah dalam meminimalisir
+                            penyelewangan tugas dan wewenang yang terjadi di lingkungan Kementerian Komunikasi dan
+                            Digital.</p>
                     </div>
-               </div>
+                </div>
             </div>
         </div>
     </section>
     <section class="kriteria w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
         <div class="container w-full mx-auto px-7">
             <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Kriteria Laporan</h1>
+                <h1
+                    class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">
+                    Kriteria Laporan</h1>
                 <ul class="ps-6 md:ps-7 lg:ps-10 xl:ps-16">
                     <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
                         <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
                             <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
                         </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">What,</span> perbuatan berindikasi pelanggaran yang diketahui.</p>
+                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span
+                                class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">What,</span>
+                            perbuatan berindikasi pelanggaran yang diketahui.</p>
                     </li>
                     <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
                         <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
                             <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
                         </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Who,</span> siapa saja yang terlibat dalam perbuatan tersebut.</p>
+                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span
+                                class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Who,</span>
+                            siapa saja yang terlibat dalam perbuatan tersebut.</p>
                     </li>
                     <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
                         <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
                             <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
                         </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Where,</span> di mana perbuatan tersebut dilakukan.</p>
+                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span
+                                class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">Where,</span>
+                            di mana perbuatan tersebut dilakukan.</p>
                     </li>
                     <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
                         <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
                             <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
                         </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">When,</span> kapan perbuatan tersebut dilakukan.</p>
+                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span
+                                class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">When,</span>
+                            kapan perbuatan tersebut dilakukan.</p>
                     </li>
                     <li class="flex md:items-center gap-2 mb-4 md:mb-5 ">
                         <div class="box-img-arrow-krita w-5 md:w-7 lg:w-9 xl:w-auto">
                             <img src="./src/img/arrow-kriteria.svg" class="w-full" alt="">
                         </div>
-                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">How,</span> bagaimana perbuatan tersebut dilakukan.</p>
+                        <p class="font-roboto text-sm md:text-base lg:text-xl xl:text-lg -mt-0.5 md:mt-0 w-full"><span
+                                class="font-bold text-[#3D3D3D] font-montserrat text-[13px] md:text-sm lg:text-xl xl:text-lg">How,</span>
+                            bagaimana perbuatan tersebut dilakukan.</p>
                     </li>
                 </ul>
 
-              
+
             </div>
         </div>
     </section>
     <section class="laporan w-full py-8 lg:py-16 xl:pt-5 xl:pb-[88px]">
         <div class="container w-full mx-auto px-7">
             <div class="xl:w-[1150px] xl:mx-auto ">
-               <h1 class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">Cara Membuat Laporan</h1>
-               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-5 xl:gap-6  px-4 xl:px-10">
+                <h1
+                    class="font-montserrat font-bold text-black-base text-lg md:text-2xl mb-9 md:mb-12 lg:mb-16 xl:mb-[56px] lg:text-4xl xl:text-5xl">
+                    Cara Membuat Laporan</h1>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-5 xl:gap-6  px-4 xl:px-10">
                     <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
+                        <div
+                            class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
                             <img src="./src/img/laporan-1.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Buat Akun</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Pertama silahkan daftarkan diri Anda ke layanan WBS, Anda boleh menggunakan identitas samaran.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Buat Akun</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Pertama
+                            silahkan daftarkan diri Anda ke layanan WBS, Anda boleh menggunakan identitas samaran.</p>
                     </div>
                     <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
+                        <div
+                            class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
                             <img src="./src/img/laporan-2.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Login Layanan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Setelah melakukan pendaftaran, langkah selanjutnya silahkan melakukan login ke dalam layanan.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Login Layanan</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Setelah
+                            melakukan pendaftaran, langkah selanjutnya silahkan melakukan login ke dalam layanan.</p>
                     </div>
                     <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
+                        <div
+                            class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
                             <img src="./src/img/laporan-3.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Buat Laporan</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Anda tinggal mengisi formulir yang telah disediakan beserta bukti laporan selanjutnya klik kirim.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Buat Laporan</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Anda tinggal
+                            mengisi formulir yang telah disediakan beserta bukti laporan selanjutnya klik kirim.</p>
                     </div>
                     <div class="laporan-box  p-4 md:p-4 xl:p-6 border-[3px] md:border-[4px] border-gold rounded-3xl">
-                        <div class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
+                        <div
+                            class="box-img-layanan w-24 lg:w-32 xl:w-[132px] h-[90px] lg:h-32 xl:h-[132px] mb-4 xl:mb-6">
                             <img src="./src/img/laporan-4.svg" class="w-full" alt="">
                         </div>
-                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">Respon</h3>
-                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda kemudian kami tindaklanjuti tanpa mengabaikan kerahasiaan dan identitas Anda.</p>
+                        <h3 class="font-montserrat font-bold text-base lg:text-xl xl:text-[22.5px] text-[#3D3D3D] mb-2">
+                            Respon</h3>
+                        <p class="font-roboto text-xs md:text-sm lg:text-base xl:text-base text-[#3D3D3D]">Data Anda
+                            kemudian kami tindaklanjuti tanpa mengabaikan kerahasiaan dan identitas Anda.</p>
                     </div>
-                   
-               </div>
+
+                </div>
             </div>
         </div>
     </section>
-   
+
 
 
     <footer class="pt-[88px] ">
@@ -371,7 +431,8 @@
         <div
             class="footer-bottom py-5 xl:py-6 px-6 xl:px-0 bg-primary font-montserrat text-sm lg:text-base xl:text-[18px]  ">
             <div class="container  xl:px-20 md:max-w-full xl:max-w-[1480px] xl:mx-auto">
-                <p class="text-white font-semibold">© Kementerian Koordinator Bidang Pemberdayaan Masyarakat, 2025. Copyright</p>
+                <p class="text-white font-semibold">© Kementerian Koordinator Bidang Pemberdayaan Masyarakat, 2025.
+                    Copyright</p>
             </div>
         </div>
     </footer>

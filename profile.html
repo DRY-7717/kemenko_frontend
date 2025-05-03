@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
                             </div>
-                          
+
                             <a href="kontak.html" @click="toggleMenu()"
                                 class="px-3 md:px-8 xl:px-2 py-2 mx-3 xl:mx-0  mt-2 text-[#3D3D3D] transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-100 ">Kontak</a>
                             <div class="xl:flex items-center px-6 md:px-10 xl:ps-2 xl:px-0 xl:gap-x-4 ">
@@ -140,8 +140,9 @@
                                     <img src="./src/img/search-icon.svg"
                                         class="w-full h-full object-center object-cover" alt="">
                                 </div>
+                                <!-- flex items-center justify-between -->
                                 <div
-                                    class="toogle-language mt-3 lg:mt-4 xl:mt-0 flex items-center justify-between   rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
+                                    class="hidden toogle-language mt-3 lg:mt-4 xl:mt-0     rounded-full  bg-primary w-24 h-11 py-1 px-3   text-white">
                                     <div @click="lang = 'ID'"
                                         class="id-language py-1 px-2 active-language transition-all duration-300 cursor-pointer"
                                         :class="{'active-language': lang == 'ID'}">
