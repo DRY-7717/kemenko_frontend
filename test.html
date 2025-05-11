@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+.kotak{
+    width: 100%;
+    background-color: bisque;
+
+    position: relative;
+    
+}
+
+.btn-hover{
+    background-color: salmon;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 90px;
+    border-radius: 10px;
+    margin:  50px auto  ;
+    transition: all;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+.btn-hover:hover{
+    background-color: rgb(252, 96, 79);
+    
+}
+
+
+/* .btn-hover:hover + .box-hover{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+
+} */
+
+
+.box-hover{
+    width: 100%;
+    
+    background-color: aqua;
+    position: absolute;
+    left: 0;
+    /* opacity: 0;
+    visibility: hidden; */
+    transition: all;
+    transition-duration: .3s;
+    display: flex;
+    justify-content: space-evenly;
+
+ 
+}
+
+
+.box{
+    padding: 50px;;
+    width: 500px;
+}
+
+.box-1{
+    background-color: bisque;
+}
+.box-2{
+    background-color: red;
+}
+
+
+
+
+
+</style>
+<body>
+
+
+
+
+    <div class="kotak">
+        <div class="btn-hover">Hover Me
+
+            <div class="box-hover">
+                <div class="box box-1">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quo sit qui optio quasi necessitatibus placeat minima reiciendis porro impedit quaerat incidunt rem suscipit ut, in labore sapiente, nobis tempore.</p>
+                </div>
+                <div class="box box-2" style="display: flex; justify-content: space-between;">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quo sit qui optio quasi necessitatibus placeat minima reiciendis porro impedit quaerat incidunt rem suscipit ut, in labore sapiente, nobis tempore.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quo sit qui optio quasi necessitatibus placeat minima reiciendis porro impedit quaerat incidunt rem suscipit ut, in labore sapiente, nobis tempore.</p>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+    
+</body>
+</html>
