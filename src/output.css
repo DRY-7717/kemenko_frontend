@@ -474,6 +474,15 @@
   .mx-auto {
     margin-inline: auto;
   }
+  .ms-1 {
+    margin-inline-start: calc(var(--spacing) * 1);
+  }
+  .ms-2 {
+    margin-inline-start: calc(var(--spacing) * 2);
+  }
+  .me-1 {
+    margin-inline-end: calc(var(--spacing) * 1);
+  }
   .me-1\.5 {
     margin-inline-end: calc(var(--spacing) * 1.5);
   }
@@ -509,9 +518,6 @@
   }
   .mt-auto {
     margin-top: auto;
-  }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
   }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
@@ -2130,9 +2136,6 @@
   .ps-2 {
     padding-inline-start: calc(var(--spacing) * 2);
   }
-  .ps-4 {
-    padding-inline-start: calc(var(--spacing) * 4);
-  }
   .ps-6 {
     padding-inline-start: calc(var(--spacing) * 6);
   }
@@ -3668,16 +3671,6 @@
   .md\:ps-0\.5 {
     @media (width >= 48rem) {
       padding-inline-start: calc(var(--spacing) * 0.5);
-    }
-  }
-  .md\:ps-1 {
-    @media (width >= 48rem) {
-      padding-inline-start: calc(var(--spacing) * 1);
-    }
-  }
-  .md\:ps-4 {
-    @media (width >= 48rem) {
-      padding-inline-start: calc(var(--spacing) * 4);
     }
   }
   .md\:ps-7 {
@@ -5217,11 +5210,6 @@
       padding-inline-start: calc(var(--spacing) * 4);
     }
   }
-  .xl\:ps-7 {
-    @media (width >= 80rem) {
-      padding-inline-start: calc(var(--spacing) * 7);
-    }
-  }
   .xl\:ps-8 {
     @media (width >= 80rem) {
       padding-inline-start: calc(var(--spacing) * 8);
@@ -5490,13 +5478,6 @@
       &::placeholder {
         font-size: var(--text-2xl);
         line-height: var(--tw-leading, var(--text-2xl--line-height));
-      }
-    }
-  }
-  .lg\:xl\:ps-4 {
-    @media (width >= 64rem) {
-      @media (width >= 80rem) {
-        padding-inline-start: calc(var(--spacing) * 4);
       }
     }
   }
